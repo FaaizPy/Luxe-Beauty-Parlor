@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Luxe Beauty Studio – Premium Bridal Makeup, Hair Styling, Skincare & Beauty Academy in Islamabad, Pakistan."/>
+<meta name="keywords" content="bridal makeup Islamabad, beauty salon Pakistan, beauty academy, hair styling, skincare, nail extensions"/>
+<title>Luxe Beauty Studio | Where Beauty Becomes Art – Islamabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blush:#f7e8e8;
+  --blush-d:#f0d5d5;
+  --ivory:#fdfaf6;
+  --ivory-d:#f5efe5;
+  --rose:#c8977a;
+  --rose-l:#dbb49e;
+  --gold:#c9a96e;
+  --gold-l:#e2c88a;
+  --pink:#e8b4b8;
+  --pink-d:#d4848a;
+  --text:#2c1f1f;
+  --text-m:#7a6060;
+  --text-l:#b09898;
+  --white:#fff;
+  --border:rgba(200,151,122,0.18);
+  --shadow:0 8px 40px rgba(44,31,31,0.08);
+  --shadow-lg:0 20px 70px rgba(44,31,31,0.13);
+  --fd:"Cormorant Garamond",serif;
+  --fv:"Great Vibes",cursive;
+  --fb:"Jost",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--text);font-family:var(--fb);font-size:16px;line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--rose),var(--gold));border-radius:2px}
+
+/* UTILS */
+.container{max-width:1140px;margin:0 auto;padding:0 6%}
+.eyebrow{font-family:var(--fb);font-size:0.7rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:0.8rem;margin-bottom:0.9rem}
+.eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--rose);flex-shrink:0}
+.eyebrow.c{justify-content:center}
+.gold-line{width:50px;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:1px;margin:1rem 0 2.2rem}
+.gold-line.c{margin:1rem auto 2.2rem}
+.btn-rose{display:inline-flex;align-items:center;gap:0.6rem;padding:0.95rem 2.4rem;background:linear-gradient(135deg,var(--rose),var(--pink-d));color:white;font-family:var(--fb);font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:all 0.35s;box-shadow:0 8px 30px rgba(200,151,122,0.35)}
+.btn-rose:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(200,151,122,0.5)}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.6rem;padding:0.95rem 2.4rem;background:transparent;color:var(--rose);font-family:var(--fb);font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:50px;text-decoration:none;border:1.5px solid var(--rose);transition:all 0.35s}
+.btn-ghost:hover{background:var(--rose);color:white}
+
+/* SCROLL ANIMATIONS - safe approach */
+.fadein{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fadein.show{opacity:1;transform:none}
+.fadel{opacity:0;transform:translateX(-28px);transition:opacity 0.85s ease,transform 0.85s ease}
+.fadel.show{opacity:1;transform:none}
+.fader{opacity:0;transform:translateX(28px);transition:opacity 0.85s ease,transform 0.85s ease}
+.fader.show{opacity:1;transform:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 6%;transition:all 0.45s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px;transition:height 0.35s}
+nav.solid{background:rgba(253,250,246,0.97);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--border),0 4px 30px rgba(44,31,31,0.07)}
+nav.solid .nav-inner{height:64px}
+.nav-logo{text-decoration:none}
+.nl-script{font-family:var(--fv);font-size:1.7rem;color:white;display:block;line-height:1;transition:color 0.3s}
+.nl-sub{font-family:var(--fb);font-size:0.55rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:500;display:block}
+nav.solid .nl-script{color:var(--rose)}
+nav.solid .nl-sub{color:var(--text-l)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:var(--fb);font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.8);text-decoration:none;letter-spacing:0.5px;transition:color 0.25s}
+nav.solid .nav-links a{color:var(--text-m)}
+.nav-links a:hover,.nav-links a:hover{color:var(--rose)}
+.nav-book{font-family:var(--fb);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:0.55rem 1.5rem;border-radius:50px;background:linear-gradient(135deg,var(--rose),var(--pink-d));color:white;text-decoration:none;box-shadow:0 4px 18px rgba(200,151,122,0.35);transition:all 0.3s}
+.nav-book:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,151,122,0.5)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:white;border-radius:1px;transition:all 0.3s}
+nav.solid .hamburger span{background:var(--rose)}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(253,250,246,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.2rem;backdrop-filter:blur(30px)}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--fd);font-size:2rem;font-weight:500;color:var(--text);text-decoration:none;transition:color 0.2s}
+.mob-menu a:hover{color:var(--rose)}
+.mob-close{position:absolute;top:1.8rem;right:6%;background:none;border:none;font-size:1.6rem;color:var(--text-m);cursor:pointer;font-family:sans-serif}
+.mob-wa{padding:0.85rem 2.5rem;background:linear-gradient(135deg,var(--rose),var(--pink-d));color:white;border-radius:50px;font-family:var(--fb);font-weight:600;font-size:0.9rem;text-decoration:none;margin-top:0.5rem}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(160deg,#2c1a1a 0%,#4a2828 30%,#3a2020 60%,#1e1212 100%)}
+.hero-dots{position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:32px 32px}
+.hero-glow{position:absolute;top:20%;right:20%;width:450px;height:450px;background:radial-gradient(circle,rgba(200,151,122,0.14) 0%,transparent 70%);z-index:1;border-radius:50%;animation:glowPulse 5s ease-in-out infinite alternate}
+@keyframes glowPulse{from{transform:scale(0.9);opacity:0.6}to{transform:scale(1.1);opacity:1}}
+.hero-glow2{position:absolute;bottom:15%;left:10%;width:300px;height:300px;background:radial-gradient(circle,rgba(201,169,110,0.08) 0%,transparent 70%);z-index:1;border-radius:50%}
+canvas#sparkCanvas{position:absolute;inset:0;z-index:2;pointer-events:none}
+.petal-wrap{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.petal{position:absolute;width:3px;height:3px;border-radius:50%;animation:petalFall linear infinite}
+@keyframes petalFall{0%{opacity:1;transform:translateY(-20px) translateX(0) rotate(0deg)}100%{opacity:0;transform:translateY(105vh) translateX(30px) rotate(360deg)}}
+.hero-inner{position:relative;z-index:3;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center;padding:9rem 0 5rem;width:100%}
+.hero-script{font-family:var(--fv);font-size:1.5rem;color:var(--gold-l);display:block;margin-bottom:0.5rem;animation:fadeUp 0.7s 0.3s both}
+.hero-h1{font-family:var(--fd);font-size:clamp(2.8rem,6vw,5rem);font-weight:300;color:white;line-height:1.05;margin-bottom:1.3rem;animation:fadeUp 0.8s 0.5s both}
+.hero-h1 em{font-style:italic;color:var(--gold-l)}
+.hero-tagline{font-family:var(--fb);font-size:0.85rem;color:rgba(255,255,255,0.55);letter-spacing:3px;text-transform:uppercase;margin-bottom:0.9rem;animation:fadeUp 0.7s 0.65s both}
+.hero-tagline span{color:rgba(255,255,255,0.85)}
+.hero-tagline span:not(:last-child)::after{content:" · ";color:var(--gold-l)}
+.hero-urdu{font-size:1.05rem;color:rgba(201,169,110,0.85);font-style:italic;margin-bottom:2.5rem;direction:rtl;text-align:left;animation:fadeUp 0.7s 0.8s both}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.7s 1s both}
+.hero-r{animation:fadeIn 1.2s 0.7s both;display:flex;flex-direction:column;gap:1.2rem}
+.hero-card{background:rgba(253,250,246,0.1);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(20px);border-radius:22px;padding:2.2rem;position:relative;overflow:hidden}
+.hero-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--rose),var(--gold))}
+.hc-tag{font-family:var(--fb);font-size:0.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-l);margin-bottom:0.8rem}
+.hc-title{font-family:var(--fd);font-size:1.5rem;font-weight:500;color:white;margin-bottom:0.3rem}
+.hc-sub{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1.5rem}
+.hc-chips{display:flex;flex-wrap:wrap;gap:0.5rem}
+.hc-chip{font-family:var(--fb);font-size:0.68rem;color:var(--rose-l);background:rgba(200,151,122,0.12);border:1px solid rgba(200,151,122,0.2);padding:0.3rem 0.85rem;border-radius:50px}
+.hero-stats{display:flex;gap:1rem}
+.hstat{flex:1;background:rgba(253,250,246,0.08);border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(16px);border-radius:16px;padding:1.1rem;text-align:center}
+.hstat-num{font-family:var(--fd);font-size:1.8rem;font-weight:600;color:var(--rose-l);line-height:1}
+.hstat-lbl{font-family:var(--fb);font-size:0.6rem;color:rgba(255,255,255,0.45);letter-spacing:1.5px;text-transform:uppercase;margin-top:3px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* INTRO STRIP */
+.intro-strip{background:linear-gradient(135deg,var(--rose),var(--gold));padding:1.35rem 0;overflow:hidden}
+.strip-track{display:flex;animation:ticker 22s linear infinite;white-space:nowrap}
+.strip-item{font-family:var(--fb);font-size:0.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.9);padding:0 2.5rem}
+.strip-item::after{content:"✦";padding-left:2.5rem;color:rgba(255,255,255,0.45)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ABOUT */
+#about{padding:9rem 0;background:var(--ivory)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.av-wrap{position:relative}
+.av-img{border-radius:28px;overflow:hidden;aspect-ratio:3/4;background:linear-gradient(160deg,var(--blush) 0%,#e8c0c0 50%,var(--blush-d) 100%);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg)}
+.av-img-inner{text-align:center;font-size:5.5rem;line-height:1.5;opacity:0.65}
+.av-card{position:absolute;bottom:-22px;right:-22px;background:white;border-radius:20px;padding:1.4rem 1.8rem;box-shadow:var(--shadow-lg);text-align:center;z-index:2}
+.avc-num{font-family:var(--fd);font-size:2.6rem;font-weight:600;color:var(--rose);line-height:1}
+.avc-lbl{font-family:var(--fb);font-size:0.62rem;font-weight:600;color:var(--text-l);letter-spacing:2px;text-transform:uppercase;margin-top:3px}
+.av-badge{position:absolute;top:-18px;left:-18px;background:linear-gradient(135deg,var(--rose),var(--gold));border-radius:16px;padding:1rem 1.1rem;font-size:1.8rem;box-shadow:0 8px 28px rgba(200,151,122,0.4);z-index:2}
+.about-text h2{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:400;color:var(--text);line-height:1.1;margin-bottom:0.5rem}
+.about-text h2 em{font-style:italic;color:var(--rose)}
+.about-text p{color:var(--text-m);font-size:1rem;line-height:1.85;margin-bottom:1.2rem}
+.about-text p strong{color:var(--text);font-weight:600}
+.about-urdu-box{background:linear-gradient(135deg,var(--blush),rgba(201,169,110,0.08));border-left:3px solid var(--rose);padding:1.2rem 1.6rem;border-radius:0 16px 16px 0;margin:1.8rem 0;direction:rtl;text-align:right}
+.about-urdu-box p{font-size:1.05rem;color:var(--text);font-weight:500;line-height:1.8}
+.chips{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem}
+.chip{font-family:var(--fb);font-size:0.7rem;font-weight:500;color:var(--rose);background:rgba(200,151,122,0.08);border:1px solid rgba(200,151,122,0.2);padding:0.3rem 0.9rem;border-radius:50px}
+
+/* SERVICES */
+#services{padding:9rem 0;background:var(--ivory-d)}
+.sec-head{text-align:center;margin-bottom:5rem}
+.sec-head h2{font-family:var(--fd);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:400;color:var(--text)}
+.sec-head h2 em{font-style:italic;color:var(--rose)}
+.sec-head p{font-size:0.82rem;color:var(--text-l);letter-spacing:2.5px;text-transform:uppercase;margin-top:0.5rem}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.svc-card{background:white;border-radius:24px;padding:2.5rem 2rem;border:1px solid var(--border);transition:all 0.45s cubic-bezier(0.25,0.46,0.45,0.94);cursor:default;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(44,31,31,0.04)}
+.svc-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 0.45s}
+.svc-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg);border-color:rgba(200,151,122,0.28)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-icon{width:66px;height:66px;border-radius:18px;background:linear-gradient(135deg,var(--blush),var(--blush-d));display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:1.6rem;transition:transform 0.35s}
+.svc-card:hover .svc-icon{transform:scale(1.1) rotate(-4deg)}
+.svc-name{font-family:var(--fd);font-size:1.45rem;font-weight:500;color:var(--text);margin-bottom:0.6rem}
+.svc-desc{font-size:0.88rem;color:var(--text-m);line-height:1.7;margin-bottom:1.4rem}
+.svc-price{font-family:var(--fd);font-size:1rem;color:var(--rose);font-weight:500}
+.svc-price span{font-family:var(--fb);font-size:0.68rem;color:var(--text-l)}
+.svc-quote{text-align:center;margin-top:4rem;padding:2.5rem 3rem;border:1px solid var(--border);border-radius:24px;background:white;box-shadow:0 2px 12px rgba(44,31,31,0.04)}
+.svc-quote p{font-family:var(--fd);font-size:clamp(1.3rem,2.5vw,1.9rem);font-style:italic;color:var(--text)}
+.svc-quote p span{color:var(--rose)}
+
+/* BRIDAL */
+#bridal{padding:9rem 0;background:var(--ivory)}
+.bridal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1.2rem;margin-top:0}
+.bc{position:relative;border-radius:20px;overflow:hidden;cursor:pointer}
+.bc.tall{grid-row:span 2}
+.bc-bg{width:100%;min-height:220px;display:flex;align-items:center;justify-content:center;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
+.bc.tall .bc-bg{min-height:460px}
+.bc:hover .bc-bg{transform:scale(1.06)}
+.bc-emoji{font-size:4.5rem;opacity:0.55;transition:all 0.4s}
+.bc:hover .bc-emoji{opacity:0.75;transform:scale(1.12)}
+.bc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(44,20,20,0.68) 0%,transparent 55%);opacity:0;transition:opacity 0.4s;display:flex;align-items:flex-end;padding:1.5rem}
+.bc:hover .bc-overlay{opacity:1}
+.bc-lbl{font-family:var(--fd);font-size:1.25rem;font-style:italic;color:white;transform:translateY(10px);transition:transform 0.4s}
+.bc:hover .bc-lbl{transform:none}
+.bridal-cta{text-align:center;margin-top:4rem}
+.bridal-cta p{font-family:var(--fb);font-size:0.8rem;letter-spacing:2px;color:var(--text-l);text-transform:uppercase;margin-bottom:1.5rem}
+
+/* ACADEMY */
+#academy{padding:9rem 0;background:linear-gradient(160deg,#2c1a1a 0%,#3d2222 50%,#2a1616 100%);position:relative;overflow:hidden}
+#academy::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(201,169,110,0.055) 1px,transparent 1px);background-size:30px 30px}
+.acad-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+.acad-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(16px);border-radius:24px;padding:2.5rem;position:relative;overflow:hidden}
+.acad-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold))}
+.acad-icons{display:flex;gap:0.9rem;flex-wrap:wrap;margin-bottom:2rem}
+.acad-icon{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:transform 0.3s;cursor:default}
+.acad-icon:hover{transform:scale(1.1) rotate(-5deg)}
+.acad-stats-row{display:flex;gap:1.5rem;margin-bottom:2rem}
+.ast{text-align:center}
+.ast-num{font-family:var(--fd);font-size:2rem;font-weight:600;color:var(--gold-l);line-height:1}
+.ast-lbl{font-family:var(--fb);font-size:0.6rem;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.ast-div{width:1px;background:rgba(255,255,255,0.1);align-self:stretch}
+.acad-courses{display:flex;flex-direction:column;gap:0.8rem}
+.course{display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.2rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:12px;transition:all 0.3s}
+.course:hover{background:rgba(255,255,255,0.1);border-color:rgba(201,169,110,0.2)}
+.course-name{font-family:var(--fd);font-size:1rem;color:white;font-weight:400}
+.course-badge{font-family:var(--fb);font-size:0.58rem;font-weight:700;color:var(--gold-l);background:rgba(201,169,110,0.1);border:1px solid rgba(201,169,110,0.2);padding:0.2rem 0.7rem;border-radius:50px;letter-spacing:1px;text-transform:uppercase}
+.acad-text h2{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:300;color:white;line-height:1.1;margin-bottom:0.4rem}
+.acad-text h2 em{font-style:italic;color:var(--gold-l)}
+.acad-tagline{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.5rem);font-style:italic;color:var(--rose-l);margin-bottom:1.5rem}
+.acad-text p{color:rgba(255,255,255,0.5);font-size:0.95rem;line-height:1.85;margin-bottom:1rem}
+.acad-text p strong{color:rgba(255,255,255,0.85)}
+.acad-feats{display:flex;flex-direction:column;gap:0.65rem;margin:1.5rem 0 2rem}
+.acad-feat{display:flex;align-items:center;gap:0.75rem;font-size:0.87rem;color:rgba(255,255,255,0.55)}
+.acad-feat::before{content:"✦";color:var(--gold-l);font-size:0.6rem;flex-shrink:0}
+.acad-eyebrow{font-family:var(--fb);font-size:0.7rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold-l);display:flex;align-items:center;gap:0.7rem;margin-bottom:0.9rem}
+.acad-eyebrow::before,.acad-eyebrow::after{content:"";width:28px;height:1px;background:var(--gold-l)}
+
+/* TESTIMONIALS */
+#testimonials{padding:9rem 0;background:var(--ivory-d)}
+.testi-track-wrap{overflow:hidden}
+.testi-track{display:flex;gap:1.5rem;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
+.testi-card{min-width:calc(33.333% - 1rem);background:white;border-radius:24px;padding:2.2rem;border:1px solid var(--border);flex-shrink:0;transition:all 0.35s;position:relative;overflow:hidden;box-shadow:0 2px 10px rgba(44,31,31,0.04)}
+.testi-card::before{content:"\201C";position:absolute;top:-15px;right:1.5rem;font-family:var(--fd);font-size:9rem;color:rgba(200,151,122,0.06);line-height:1;pointer-events:none}
+.testi-card:hover{border-color:rgba(200,151,122,0.28);box-shadow:var(--shadow);transform:translateY(-4px)}
+.tc-stars{color:var(--gold);font-size:0.95rem;letter-spacing:2px;margin-bottom:1.2rem}
+.tc-text{font-family:var(--fd);font-size:1.03rem;font-style:italic;color:var(--text-m);line-height:1.75;margin-bottom:1.8rem;font-weight:400}
+.tc-author{display:flex;align-items:center;gap:0.9rem}
+.tc-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--rose-l));display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--rose);flex-shrink:0}
+.tc-name{font-family:var(--fd);font-size:1rem;font-weight:500;color:var(--text)}
+.tc-role{font-family:var(--fb);font-size:0.7rem;color:var(--text-l)}
+.rating-pill{display:inline-flex;align-items:center;gap:0.9rem;background:white;border:1px solid var(--border);border-radius:50px;padding:0.7rem 1.6rem;box-shadow:var(--shadow);margin-top:1rem}
+.rp-stars{color:var(--gold);font-size:1.05rem;letter-spacing:1px}
+.rp-num{font-family:var(--fd);font-size:1.2rem;font-weight:500;color:var(--text)}
+.rp-lbl{font-family:var(--fb);font-size:0.7rem;color:var(--text-l)}
+.testi-btns{display:flex;justify-content:center;gap:0.9rem;margin-top:2.5rem}
+.t-btn{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--border);background:white;color:var(--rose);font-size:1rem;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.t-btn:hover{background:linear-gradient(135deg,var(--rose),var(--pink-d));color:white;border-color:transparent;box-shadow:0 8px 24px rgba(200,151,122,0.35)}
+
+/* CONTACT */
+#contact{padding:9rem 0;background:var(--ivory)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.cl h2{font-family:var(--fd);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:400;color:var(--text);margin-bottom:0.5rem}
+.cl h2 em{font-style:italic;color:var(--rose)}
+.cl > p{color:var(--text-m);line-height:1.85;margin-bottom:2.5rem;font-size:0.98rem}
+.c-items{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.c-item{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;background:white;border:1px solid var(--border);border-radius:16px;text-decoration:none;transition:all 0.3s;box-shadow:0 2px 8px rgba(44,31,31,0.04)}
+.c-item:hover{border-color:rgba(200,151,122,0.4);box-shadow:var(--shadow);transform:translateX(5px)}
+.c-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blush),var(--blush-d));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.c-lbl{font-family:var(--fb);font-size:0.6rem;font-weight:700;color:var(--text-l);letter-spacing:2px;text-transform:uppercase;margin-bottom:2px}
+.c-val{font-size:0.9rem;color:var(--text);font-weight:500}
+.map-box{border-radius:20px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(135deg,var(--blush),var(--ivory-d));min-height:175px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.9rem;padding:2.2rem;text-align:center;box-shadow:var(--shadow)}
+.map-box span{font-size:2.4rem}
+.map-box p{font-size:0.88rem;color:var(--text-m);line-height:1.7}
+.map-box p strong{display:block;font-family:var(--fd);font-size:1.2rem;color:var(--text);margin-bottom:0.3rem}
+.map-link{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.4rem;background:var(--rose);color:white;border-radius:50px;font-size:0.75rem;font-weight:600;text-decoration:none;font-family:var(--fb);transition:all 0.25s}
+.map-link:hover{background:var(--pink-d);box-shadow:0 6px 20px rgba(200,151,122,0.35)}
+.book-form{background:white;border:1px solid var(--border);border-radius:28px;padding:3rem;box-shadow:var(--shadow)}
+.bf-script{font-family:var(--fv);font-size:1.8rem;color:var(--rose);display:block;margin-bottom:0.2rem}
+.bf-title{font-family:var(--fd);font-size:1.6rem;font-weight:500;color:var(--text);margin-bottom:0.3rem}
+.bf-sub{font-size:0.82rem;color:var(--text-l);margin-bottom:2rem}
+.fg{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.1rem}
+.fg label{font-family:var(--fb);font-size:0.62rem;font-weight:700;color:var(--text-l);letter-spacing:2px;text-transform:uppercase}
+.fg input,.fg textarea,.fg select{background:var(--blush);border:1.5px solid transparent;color:var(--text);font-family:var(--fb);font-size:0.9rem;padding:0.85rem 1.1rem;border-radius:12px;outline:none;transition:all 0.3s;width:100%;-webkit-appearance:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--rose);background:white;box-shadow:0 0 0 4px rgba(200,151,122,0.1)}
+.fg select option{background:white}
+.fg textarea{resize:vertical;min-height:100px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-btn{width:100%;padding:1.05rem;background:linear-gradient(135deg,var(--rose),var(--pink-d));color:white;font-family:var(--fb);font-size:0.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:50px;cursor:pointer;transition:all 0.35s;margin-top:0.5rem}
+.form-btn:hover{box-shadow:0 10px 35px rgba(200,151,122,0.45);transform:translateY(-2px)}
+.form-ok{display:none;padding:1rem;background:rgba(200,151,122,0.1);border:1px solid rgba(200,151,122,0.25);border-radius:12px;color:var(--rose);font-family:var(--fb);font-size:0.82rem;font-weight:600;text-align:center;margin-top:0.5rem}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:400;display:flex;align-items:center;gap:0.8rem;text-decoration:none;animation:waPulse 3.5s ease-in-out infinite}
+@keyframes waPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.wa-btn{width:58px;height:58px;background:linear-gradient(135deg,#25d366,#128c7e);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.4);transition:all 0.3s;flex-shrink:0}
+.wa-float:hover .wa-btn{transform:scale(1.12);box-shadow:0 10px 35px rgba(37,211,102,0.55)}
+.wa-btn svg{width:30px;height:30px;fill:white}
+.wa-bubble{background:white;border-radius:16px 16px 0 16px;padding:0.7rem 1rem;box-shadow:var(--shadow);font-family:var(--fb);font-size:0.78rem;color:var(--text);font-weight:500;white-space:nowrap;opacity:0;transform:translateX(8px);transition:all 0.3s}
+.wa-float:hover .wa-bubble{opacity:1;transform:none}
+
+/* FOOTER */
+footer{background:linear-gradient(160deg,#1e1212,#2c1a1a);padding:5rem 6% 2rem}
+.footer-top{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:4rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.07)}
+.fb-script{font-family:var(--fv);font-size:2rem;color:var(--rose-l);display:block;margin-bottom:0.2rem}
+.fb-sub{font-family:var(--fb);font-size:0.57rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:500;display:block;margin-bottom:1.2rem}
+.f-brand p{font-size:0.88rem;color:rgba(255,255,255,0.38);line-height:1.75;max-width:280px;margin-bottom:1.5rem}
+.f-socs{display:flex;gap:0.8rem}
+.fsoc{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.9rem;transition:all 0.3s;color:rgba(255,255,255,0.38)}
+.fsoc:hover{background:var(--rose);border-color:var(--rose);color:white;transform:translateY(-3px);box-shadow:0 4px 16px rgba(200,151,122,0.35)}
+.f-col h4{font-family:var(--fd);font-size:1.1rem;font-weight:500;color:rgba(255,255,255,0.8);margin-bottom:1.2rem}
+.f-links{display:flex;flex-direction:column;gap:0.65rem}
+.f-links a{font-size:0.84rem;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.25s;font-family:var(--fb)}
+.f-links a:hover{color:var(--rose-l)}
+.footer-bot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.footer-bot p{font-size:0.74rem;color:rgba(255,255,255,0.25);font-family:var(--fb)}
+.footer-bot p em{color:var(--rose-l);font-style:normal}
+.back-top{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.2rem;border:1px solid rgba(255,255,255,0.12);border-radius:50px;font-size:0.72rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:all 0.3s;font-family:var(--fb)}
+.back-top:hover{border-color:var(--rose-l);color:var(--rose-l)}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .hero-inner{grid-template-columns:1fr;padding:9rem 0 5rem;gap:3rem}
+  .hero-r{order:-1}
+  .about-grid,.acad-grid,.contact-grid{grid-template-columns:1fr;gap:3.5rem}
+  .av-wrap{max-width:420px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .bridal-grid{grid-template-columns:1fr 1fr}
+  .bc.tall{grid-row:auto}
+  .bc.tall .bc-bg{min-height:220px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .f-brand{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .nav-links,.nav-book{display:none}
+  .hamburger{display:flex}
+  nav{padding:0 5%}
+  .svc-grid{grid-template-columns:1fr}
+  .bridal-grid{grid-template-columns:1fr 1fr}
+  .testi-card{min-width:calc(90% - 1rem)}
+  .fg-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .f-brand{grid-column:unset}
+  .footer-bot{flex-direction:column;text-align:center}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn-rose,.hero-btns .btn-ghost{width:100%;justify-content:center}
+  .wa-bubble{display:none}
+}
+@media(max-width:500px){
+  section{padding:6rem 0!important}
+  .container{padding:0 5%}
+  footer{padding:4rem 5% 2rem}
+  .book-form{padding:2rem}
+  .hero-stats{flex-direction:column;gap:0.8rem}
+  .hero-stats .hstat{padding:0.9rem}
+}
+</style>
+</head>
+<body>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/923001234567?text=Assalam+o+Alaikum!+I+would+like+to+book+an+appointment+at+Luxe+Beauty+Studio." target="_blank" class="wa-float">
+  <div class="wa-bubble">Book Appointment 💌</div>
+  <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+</a>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMob()">&#10005;</button>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#bridal" onclick="closeMob()">Bridal</a>
+  <a href="#academy" onclick="closeMob()">Academy</a>
+  <a href="#testimonials" onclick="closeMob()">Reviews</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="https://wa.me/923001234567" target="_blank" class="mob-wa">&#128140; Book Now</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <span class="nl-script">Luxe Beauty</span>
+      <span class="nl-sub">Studio &amp; Academy &middot; Islamabad</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#bridal">Bridal</a></li>
+      <li><a href="#academy">Academy</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-book">&#10024; Book Now</a>
+    <button class="hamburger" onclick="openMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <canvas id="sparkCanvas"></canvas>
+  <div class="petal-wrap" id="petalWrap"></div>
+  <div class="hero-inner container">
+    <div class="hero-l">
+      <span class="hero-script">Luxe Beauty Studio</span>
+      <h1 class="hero-h1">Where Beauty<br><em>Becomes</em> Art</h1>
+      <p class="hero-tagline">
+        <span>Premium Skin</span>
+        <span>Hair</span>
+        <span>Nails</span>
+        <span>Bridal Makeovers</span>
+      </p>
+      <p class="hero-urdu">"Apki khubsurti, hamari zimmedari."</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-rose">&#128140; Book Appointment</a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="hero-card">
+        <div class="hc-tag">&#10022; Bridal Bookings 2025 Now Open</div>
+        <div class="hc-title">Signature Bridal Experience</div>
+        <div class="hc-sub">Exclusive packages for your most special day</div>
+        <div class="hc-chips">
+          <span class="hc-chip">Bridal Makeup</span>
+          <span class="hc-chip">Hair Styling</span>
+          <span class="hc-chip">Skincare</span>
+          <span class="hc-chip">Nail Art</span>
+          <span class="hc-chip">Academy</span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-num">500+</div><div class="hstat-lbl">Happy Brides</div></div>
+        <div class="hstat"><div class="hstat-num">5 &#9733;</div><div class="hstat-lbl">Rating</div></div>
+        <div class="hstat"><div class="hstat-num">7+</div><div class="hstat-lbl">Years</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="intro-strip"><div class="strip-track">
+  <span class="strip-item">Bridal Makeup</span><span class="strip-item">Hair Styling</span><span class="strip-item">Skincare</span><span class="strip-item">Nail Extensions</span><span class="strip-item">Party Glam</span><span class="strip-item">Beauty Academy</span><span class="strip-item">Certified Courses</span><span class="strip-item">5 Star Studio</span>
+  <span class="strip-item">Bridal Makeup</span><span class="strip-item">Hair Styling</span><span class="strip-item">Skincare</span><span class="strip-item">Nail Extensions</span><span class="strip-item">Party Glam</span><span class="strip-item">Beauty Academy</span><span class="strip-item">Certified Courses</span><span class="strip-item">5 Star Studio</span>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about" style="padding:9rem 0">
+  <div class="container">
+    <div class="about-grid">
+      <div class="av-wrap fadel">
+        <div class="av-img"><div class="av-img-inner">&#128144;&#128147;<br>&#128141;&#10024;<br>&#127800;</div></div>
+        <div class="av-card"><div class="avc-num">500+</div><div class="avc-lbl">Transformations</div></div>
+        <div class="av-badge">&#127800;</div>
+      </div>
+      <div class="about-text fader">
+        <span class="eyebrow">Our Story</span>
+        <h2>A Studio Built for<br><em>Your Glow</em></h2>
+        <div class="gold-line"></div>
+        <p>Luxe Beauty Studio was born from a single belief: <strong>every woman deserves to feel extraordinary.</strong> Founded in 2018 by Sara Noor, a certified makeup artist trained in Dubai and London, our studio has grown into Islamabad's most trusted name in luxury beauty.</p>
+        <p>From intimate bridal sessions to professional skincare treatments, every service is delivered with obsessive attention to detail, the finest international products, and a <strong>genuine love for celebrating your unique beauty.</strong></p>
+        <div class="about-urdu-box"><p>"Apki khubsurti sirf baahar nahi — andar se bhi chamakti hai. Hum dono ko nikharte hain."</p></div>
+        <div class="chips">
+          <span class="chip">Bridal Specialist</span>
+          <span class="chip">Dubai & London Trained</span>
+          <span class="chip">Premium Products</span>
+          <span class="chip">Women-Owned</span>
+          <span class="chip">Certified Academy</span>
+          <span class="chip">7+ Years</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding:9rem 0;background:var(--ivory-d)">
+  <div class="container">
+    <div class="sec-head fadein">
+      <span class="eyebrow c">What We Do</span>
+      <h2>Our <em>Services</em></h2>
+      <div class="gold-line c"></div>
+      <p>Curated beauty experiences — designed exclusively for you</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fadein">
+        <div class="svc-icon">&#128144;&#65039;</div>
+        <h3 class="svc-name">Bridal Makeup</h3>
+        <p class="svc-desc">The most important look of your life, crafted to perfection. Our signature bridal packages include trial session, day-of glam, and full bridal party services.</p>
+        <div class="svc-price">From PKR 18,000 <span>/ full package</span></div>
+      </div>
+      <div class="svc-card fadein">
+        <div class="svc-icon">&#127881;</div>
+        <h3 class="svc-name">Party Makeup</h3>
+        <p class="svc-desc">From festive Eid looks to mehndi nights and formal dinners — bold, long-lasting glam that photographs beautifully and turns every head in the room.</p>
+        <div class="svc-price">From PKR 4,500 <span>/ session</span></div>
+      </div>
+      <div class="svc-card fadein">
+        <div class="svc-icon">&#128135;&#127995;&#8205;&#9792;&#65039;</div>
+        <h3 class="svc-name">Hair Styling</h3>
+        <p class="svc-desc">From voluminous bridal updos to sleek blowouts, balayage, and keratin treatments — our senior stylists bring international techniques to every strand.</p>
+        <div class="svc-price">From PKR 2,500 <span>/ session</span></div>
+      </div>
+      <div class="svc-card fadein">
+        <div class="svc-icon">&#10024;</div>
+        <h3 class="svc-name">Skincare Treatments</h3>
+        <p class="svc-desc">Medical-grade facials, hydration therapy, brightening peels, and custom skin analysis using Dermalogica & La Mer products imported from the UK.</p>
+        <div class="svc-price">From PKR 5,000 <span>/ treatment</span></div>
+      </div>
+      <div class="svc-card fadein">
+        <div class="svc-icon">&#128133;&#127995;</div>
+        <h3 class="svc-name">Nail Extensions</h3>
+        <p class="svc-desc">Gel, acrylic, 3D nail art, French ombre, and custom nail designs. From minimalist elegance to bold statement nails — perfection in every single detail.</p>
+        <div class="svc-price">From PKR 2,200 <span>/ set</span></div>
+      </div>
+      <div class="svc-card fadein">
+        <div class="svc-icon">&#127891;</div>
+        <h3 class="svc-name">Beauty Academy</h3>
+        <p class="svc-desc">Professional certification courses in makeup artistry, hair, skincare, and nail technology. Launch your career in beauty with internationally recognized training.</p>
+        <div class="svc-price">From PKR 28,000 <span>/ course</span></div>
+      </div>
+    </div>
+    <div class="svc-quote fadein">
+      <p>"Sirf service nahi — <span>complete transformation.</span>"</p>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDAL -->
+<section id="bridal" style="padding:9rem 0;background:var(--ivory)">
+  <div class="container">
+    <div class="sec-head fadein">
+      <span class="eyebrow c">Portfolio</span>
+      <h2>Signature Bridal<br><em>Transformations</em></h2>
+      <div class="gold-line c"></div>
+      <p>Every bride. Every story. Beautifully told.</p>
+    </div>
+    <div class="bridal-grid fadein">
+      <div class="bc tall">
+        <div class="bc-bg" style="background:linear-gradient(160deg,#f0d5d5,#e8b4b8,#d4848a)"><span class="bc-emoji">&#128144;&#65039;</span></div>
+        <div class="bc-overlay"><span class="bc-lbl">The Classic Bride</span></div>
+      </div>
+      <div class="bc"><div class="bc-bg" style="background:linear-gradient(160deg,var(--blush),var(--ivory-d))"><span class="bc-emoji">&#127800;</span></div><div class="bc-overlay"><span class="bc-lbl">Soft &amp; Romantic</span></div></div>
+      <div class="bc"><div class="bc-bg" style="background:linear-gradient(160deg,#e8d5b0,#d4b87a)"><span class="bc-emoji">&#10024;</span></div><div class="bc-overlay"><span class="bc-lbl">Golden Glam</span></div></div>
+      <div class="bc"><div class="bc-bg" style="background:linear-gradient(160deg,#d5e8e0,#a8d4c0)"><span class="bc-emoji">&#127807;</span></div><div class="bc-overlay"><span class="bc-lbl">Fresh &amp; Natural</span></div></div>
+      <div class="bc"><div class="bc-bg" style="background:linear-gradient(160deg,#d5d5e8,#a8a8d4)"><span class="bc-emoji">&#128142;</span></div><div class="bc-overlay"><span class="bc-lbl">Royal &amp; Dramatic</span></div></div>
+    </div>
+    <div class="bridal-cta fadein">
+      <p>Ready to see your transformation?</p>
+      <a href="#contact" class="btn-rose">Book Bridal Consultation &#10022;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMY -->
+<section id="academy">
+  <div class="container">
+    <div class="acad-grid">
+      <div class="acad-card fadel">
+        <div class="acad-icons">
+          <div class="acad-icon">&#128141;</div>
+          <div class="acad-icon">&#128135;&#127995;&#8205;&#9792;&#65039;</div>
+          <div class="acad-icon">&#10024;</div>
+          <div class="acad-icon">&#128133;&#127995;</div>
+          <div class="acad-icon">&#127891;</div>
+        </div>
+        <div class="acad-stats-row">
+          <div class="ast"><div class="ast-num">200+</div><div class="ast-lbl">Graduates</div></div>
+          <div class="ast-div"></div>
+          <div class="ast"><div class="ast-num">4</div><div class="ast-lbl">Courses</div></div>
+          <div class="ast-div"></div>
+          <div class="ast"><div class="ast-num">100%</div><div class="ast-lbl">Certified</div></div>
+        </div>
+        <div class="acad-courses">
+          <div class="course"><span class="course-name">Makeup Artistry Pro</span><span class="course-badge">8 Weeks</span></div>
+          <div class="course"><span class="course-name">Hair Styling Master</span><span class="course-badge">6 Weeks</span></div>
+          <div class="course"><span class="course-name">Advanced Skincare</span><span class="course-badge">4 Weeks</span></div>
+          <div class="course"><span class="course-name">Nail Technology</span><span class="course-badge">3 Weeks</span></div>
+        </div>
+      </div>
+      <div class="acad-text fader">
+        <span class="acad-eyebrow">Beauty Academy</span>
+        <h2><em>Learn. Master.</em><br>Shine.</h2>
+        <p class="acad-tagline">Your career starts here.</p>
+        <div class="gold-line" style="background:linear-gradient(90deg,var(--rose),var(--gold-l))"></div>
+        <p>Luxe Beauty Academy is a <strong>certified professional training institute</strong> offering internationally-recognized courses in makeup artistry, hair styling, skincare, and nail technology.</p>
+        <p>Taught by active industry professionals with <strong>real salon experience</strong>. Small batches ensure personal attention and hands-on practice from day one.</p>
+        <div class="acad-feats">
+          <span class="acad-feat">Internationally recognized certification on completion</span>
+          <span class="acad-feat">100% hands-on practical training from day one</span>
+          <span class="acad-feat">Active industry professional instructors</span>
+          <span class="acad-feat">Job placement assistance &amp; portfolio building</span>
+          <span class="acad-feat">Maximum 8 students per batch for personal attention</span>
+          <span class="acad-feat">Flexible morning &amp; evening schedules available</span>
+        </div>
+        <a href="#contact" class="btn-rose">Enquire About Courses &#10022;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding:9rem 0;background:var(--ivory-d)">
+  <div class="container">
+    <div class="sec-head fadein">
+      <span class="eyebrow c">Client Love</span>
+      <h2>What Our <em>Clients Say</em></h2>
+      <div class="gold-line c"></div>
+      <div class="rating-pill">
+        <span class="rp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rp-num">5.0</span>
+        <span class="rp-lbl">100+ verified reviews</span>
+      </div>
+    </div>
+    <div class="testi-track-wrap fadein">
+      <div class="testi-track" id="testiT">
+        <div class="testi-card"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">"My bridal look was absolutely magical. Every single guest complimented the makeup and I felt like royalty all day long. Sara and her team are truly in a class of their own."</p><div class="tc-author"><div class="tc-av">A</div><div><div class="tc-name">Aisha Malik</div><div class="tc-role">Bride &middot; Lahore</div></div></div></div>
+        <div class="testi-card"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">"The skincare treatment changed my skin before my wedding. My complexion was glowing and my makeup artist kept saying how beautiful my skin was. 10/10 — I'll always come back."</p><div class="tc-author"><div class="tc-av">S</div><div><div class="tc-name">Sara Qureshi</div><div class="tc-role">Regular Client &middot; Islamabad</div></div></div></div>
+        <div class="testi-card"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">"I enrolled in the makeup artistry course and it transformed my career completely. The instructors are genuinely talented professionals and the certification opened so many doors for me."</p><div class="tc-author"><div class="tc-av">F</div><div><div class="tc-name">Fatima Raza</div><div class="tc-role">Academy Graduate</div></div></div></div>
+        <div class="testi-card"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">"Best nail extensions in Islamabad — no question. The attention to detail is extraordinary, they last for weeks, and the whole experience feels genuinely luxurious from start to finish."</p><div class="tc-author"><div class="tc-av">Z</div><div><div class="tc-name">Zainab Ahmed</div><div class="tc-role">Regular Client &middot; Rawalpindi</div></div></div></div>
+        <div class="testi-card"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">"My party makeup for my sister's wedding was perfection. Long-lasting, natural yet glamorous. Everyone wanted to know who did my makeup — I gave Luxe Beauty's number to every single person!"</p><div class="tc-author"><div class="tc-av">M</div><div><div class="tc-name">Maryam Noor</div><div class="tc-role">Party Glam Client</div></div></div></div>
+      </div>
+      <div class="testi-btns">
+        <button class="t-btn" onclick="slideT(-1)">&#8592;</button>
+        <button class="t-btn" onclick="slideT(1)">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:9rem 0;background:var(--ivory)">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="cl fadel">
+        <span class="eyebrow">Book Your Session</span>
+        <h2>Let's Create<br><em>Your Look</em></h2>
+        <div class="gold-line"></div>
+        <p>Whether you're a bride planning the most important day of your life, or simply want to treat yourself — we're here to make you feel extraordinary. Reach out and let's begin.</p>
+        <div class="c-items">
+          <a href="tel:+923001234567" class="c-item"><div class="c-icon">&#128222;</div><div><div class="c-lbl">Call Us</div><div class="c-val">+92 300 123 4567</div></div></a>
+          <a href="https://wa.me/923001234567" target="_blank" class="c-item"><div class="c-icon">&#128172;</div><div><div class="c-lbl">WhatsApp</div><div class="c-val">Chat &amp; Book Directly</div></div></a>
+          <a href="https://instagram.com/luxebeautystudio" target="_blank" class="c-item"><div class="c-icon">&#128247;</div><div><div class="c-lbl">Instagram</div><div class="c-val">@luxebeautystudio.pk</div></div></a>
+          <div class="c-item" style="cursor:default"><div class="c-icon">&#128205;</div><div><div class="c-lbl">Studio Location</div><div class="c-val">F-7 Markaz, Islamabad, Pakistan</div></div></div>
+        </div>
+        <div class="map-box">
+          <span>&#128205;</span>
+          <p><strong>Luxe Beauty Studio</strong>Shop 14, F-7 Markaz<br>Islamabad, Pakistan 44000</p>
+          <a href="https://maps.google.com/?q=F7+Markaz+Islamabad" target="_blank" class="map-link">Open in Google Maps &#8599;</a>
+        </div>
+      </div>
+      <div class="fader">
+        <div class="book-form">
+          <span class="bf-script">Book Now</span>
+          <h3 class="bf-title">Appointment Request</h3>
+          <p class="bf-sub">Fill in below and we'll confirm your booking within a few hours &#10024;</p>
+          <form id="bookForm">
+            <div class="fg-row">
+              <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name" required/></div>
+              <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="+92 300 0000000" required/></div>
+            </div>
+            <div class="fg"><label>Service</label>
+              <select required>
+                <option value="" disabled selected>Choose a service...</option>
+                <option>Bridal Makeup – Full Package</option>
+                <option>Bridal Makeup – Trial</option>
+                <option>Party Makeup</option>
+                <option>Hair Styling</option>
+                <option>Skincare Treatment</option>
+                <option>Nail Extensions / Art</option>
+                <option>Academy Course Enquiry</option>
+              </select>
+            </div>
+            <div class="fg-row">
+              <div class="fg"><label>Preferred Date</label><input type="date"/></div>
+              <div class="fg"><label>Event Type</label>
+                <select>
+                  <option value="" disabled selected>Event...</option>
+                  <option>Wedding / Nikkah</option>
+                  <option>Engagement</option>
+                  <option>Mehndi / Dholki</option>
+                  <option>Eid / Festival</option>
+                  <option>Birthday / Party</option>
+                  <option>Personal Grooming</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label>Special Requests</label><textarea placeholder="Tell us your vision, inspirations, or any questions..."></textarea></div>
+            <button type="submit" class="form-btn">&#10022; Request Appointment</button>
+            <div class="form-ok" id="formOk">&#10003; Received beautifully! We'll WhatsApp you within a few hours. &#128140;</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="f-brand">
+      <span class="fb-script">Luxe Beauty</span>
+      <span class="fb-sub">Studio &amp; Academy &middot; Islamabad, Pakistan</span>
+      <p>Where beauty becomes art. A premium women-owned beauty studio and academy dedicated to transforming every client with elegance, expertise, and genuine care.</p>
+      <div class="f-socs">
+        <a href="https://instagram.com" target="_blank" class="fsoc" title="Instagram">&#128247;</a>
+        <a href="https://facebook.com" target="_blank" class="fsoc" title="Facebook">f</a>
+        <a href="https://wa.me/923001234567" target="_blank" class="fsoc" title="WhatsApp">&#128172;</a>
+        <a href="https://tiktok.com" target="_blank" class="fsoc" title="TikTok">&#9654;</a>
+        <a href="https://youtube.com" target="_blank" class="fsoc" title="YouTube">&#9655;</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Services</h4>
+      <div class="f-links">
+        <a href="#services">Bridal Makeup</a>
+        <a href="#services">Party Glam</a>
+        <a href="#services">Hair Styling</a>
+        <a href="#services">Skincare Treatments</a>
+        <a href="#services">Nail Extensions</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Studio</h4>
+      <div class="f-links">
+        <a href="#about">About Us</a>
+        <a href="#bridal">Bridal Gallery</a>
+        <a href="#academy">Beauty Academy</a>
+        <a href="#testimonials">Client Reviews</a>
+        <a href="#contact">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>&#169; 2025 <em>Luxe Beauty Studio</em> &middot; F-7 Markaz, Islamabad &middot; All Rights Reserved</p>
+    <a href="#hero" class="back-top">&#8593; Back to Top</a>
+  </div>
+</footer>
+
+<script>
+// NAV
+var nav=document.getElementById("nav");
+window.addEventListener("scroll",function(){nav.classList.toggle("solid",window.scrollY>70);});
+
+// MOB MENU
+function openMob(){document.getElementById("mobMenu").classList.add("open");document.body.style.overflow="hidden";}
+function closeMob(){document.getElementById("mobMenu").classList.remove("open");document.body.style.overflow="";}
+
+// SCROLL ANIMATIONS — guaranteed to work
+function runReveal(){
+  var els=document.querySelectorAll(".fadein,.fadel,.fader");
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:"0px 0px -20px 0px"});
+  els.forEach(function(el){io.observe(el);});
+  // Fallback: show everything after 1.5s just in case
+  setTimeout(function(){els.forEach(function(el){el.classList.add("show");});},1500);
+}
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",runReveal);}else{runReveal();}
+
+// SPARKLE CANVAS
+(function(){
+  var c=document.getElementById("sparkCanvas"),ctx=c.getContext("2d"),W,H,pts=[];
+  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;}
+  resize();window.addEventListener("resize",resize);
+  for(var i=0;i<55;i++)pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.3,op:Math.random(),s:0.004+Math.random()*0.006,vy:0.2+Math.random()*0.3});
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(function(p){
+      p.y+=p.vy;p.op+=p.s;
+      if(p.op>1||p.op<0)p.s*=-1;
+      if(p.y>H){p.y=0;p.x=Math.random()*W;}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.28);
+      ctx.fillStyle="rgba(201,169,110,"+p.op.toFixed(2)+")";ctx.fill();
+    });
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// PETALS
+(function(){
+  var wrap=document.getElementById("petalWrap");
+  for(var i=0;i<20;i++){
+    var d=document.createElement("span");d.className="petal";
+    d.style.cssText="left:"+Math.random()*100+"%;animation-duration:"+(9+Math.random()*10)+"s;animation-delay:"+Math.random()*10+"s;width:"+(2+Math.random()*3)+"px;height:"+(2+Math.random()*3)+"px;background:rgba("+(Math.random()>0.5?"201,169,110":"220,140,140")+","+(0.25+Math.random()*0.45)+")";
+    wrap.appendChild(d);
+  }
+})();
+
+// TESTIMONIAL SLIDER
+var tt=document.getElementById("testiT"),ti=0;
+function getVis(){return window.innerWidth<=600?1:window.innerWidth<=900?2:3;}
+function slideT(d){
+  var cards=tt.querySelectorAll(".testi-card"),vis=getVis(),max=cards.length-vis;
+  ti=Math.max(0,Math.min(ti+d,max));
+  tt.style.transform="translateX(-"+(ti*(cards[0].offsetWidth+24))+"px)";
+}
+var ati=setInterval(function(){
+  var cards=tt.querySelectorAll(".testi-card");
+  ti++;if(ti>cards.length-getVis())ti=0;
+  tt.style.transform="translateX(-"+(ti*(cards[0].offsetWidth+24))+"px)";
+},5500);
+tt.addEventListener("mouseenter",function(){clearInterval(ati);});
+
+// FORM
+document.getElementById("bookForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var btn=this.querySelector(".form-btn");
+  btn.textContent="Sending...";btn.disabled=true;
+  setTimeout(function(){btn.style.display="none";document.getElementById("formOk").style.display="block";},1200);
+});
+</script>
+</body>
+</html>
